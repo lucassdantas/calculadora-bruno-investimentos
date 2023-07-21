@@ -105,7 +105,7 @@ function callback_send_email(){
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
 	$headers .= "From: BrunoTavares <$receiver> \r\n";
 	$headers .= "Reply-To: $receiver \r\n";
-	$headers .= "Bcc: $email, $copyReceiver";
+	$headers .= "Bcc: $email, $receiver, $copyReceiver";
 	$mail = mail($to,$subject,$email_body,$headers);
 	if($mail){
 		echo "Email enviado com sucesso.";
