@@ -60,9 +60,9 @@ calcBtn.addEventListener('mousedown', () => {
       E-mail: ${email}, <br>
       WhatsApp: ${wpp}, <br> 
       Segmento: ${segment}, <br>
-      Taxa ao ano: ${result}, <br>
-      Valor que seria pago na média de mercado: R$${marketResult}, <br>
-      Conosco você economiza: R$${economyValue}, <br>
+      Taxa ao ano: ${tax}, <br>
+      Taxa anual na concorrência: R$${marketTax}, <br>
+      Conosco você economiza ao ano: R$${economyValue}, <br>
     `
   jQuery(function($){
 
