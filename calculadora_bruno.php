@@ -57,12 +57,13 @@ calcBtn.addEventListener('mousedown', () => {
     email = document.querySelector("#email").value
     let message = `
       Investimento: R$${valueInput}, <br>
-      E-mail: ${email}, <br>
-      WhatsApp: ${wpp}, <br> 
       Segmento: ${segment}, <br>
-      Taxa ao ano: ${tax}, <br>
-      Taxa anual na concorrência: R$${marketTax}, <br>
-      Conosco você economiza ao ano: R$${economyValue}, <br>
+      Taxa ao ano: ${tax}%, <br>
+      Taxa anual na concorrência: ${marketTax}%, <br>
+      Conosco você economiza ao ano: R$${economyValue} <br>
+      
+      WhatsApp: ${wpp}, <br> 
+      E-mail: ${email}, <br>
     `
   jQuery(function($){
 
@@ -78,7 +79,7 @@ calcBtn.addEventListener('mousedown', () => {
           message: message,
       },
       success:function(res){
-        console.log(res);
+
       }
     }); 
   });
@@ -102,8 +103,8 @@ function callback_send_email(){
 	$to = $receiver;
 	$headers  = "MIME-Version: 1.0" . "\r\n";
 	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
-	$headers .= "From: BrunoTavares <$email> \r\n";
-	$headers .= "Reply-To: $email \r\n";
+	$headers .= "From: BrunoTavares <$receiver> \r\n";
+	$headers .= "Reply-To: $receiver \r\n";
 	$headers .= "Bcc: $email, $copyReceiver";
 	$mail = mail($to,$subject,$email_body,$headers);
 	if($mail){
