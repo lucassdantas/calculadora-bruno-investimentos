@@ -3,7 +3,7 @@
 * Plugin Name: Calculadora Bruno
 * Plugin URI: https://github.com/lucassdantas/calculadora-bruno-investimentos
 * Description: Calculadora para o site do Buno Investimentos
-* Version: 0.1
+* Version: 0.5
 * Author: R&D Marketing Digital
 * Author URI: https://rdmarketing.com.br/
 **/
@@ -37,16 +37,19 @@ let waitForElementToExist = (selector) => {
 }, 
 calcBtn = document.querySelector(".calcBtn")
 calcBtn.addEventListener('mousedown', () => {
-    
-  waitForElementToExist('.resultValue .jet-form__calculated-field-val').then(element => {
+  /*  
+  waitForElementToExist('.resultValue .jet-form__calculated-field-input').then(element => {
       element.innerHTML = element.innerHTML.replace(".", ",")
   });
 
-  waitForElementToExist('.marketResultValue .jet-form__calculated-field-val').then(element => {
+  waitForElementToExist('.marketResultValue .jet-form__calculated-field-input').then(element => {
       element.innerHTML = element.innerHTML.replace(".", ",")
-  });
-  let result = document.querySelector(".resultValue .jet-form__calculated-field-val").innerHTML,
-    marketResult = document.querySelector(".marketResultValue .jet-form__calculated-field-val").innerHTML,
+  });*/
+  //let 
+    //result = document.querySelector(".resultValue .jet-form__calculated-field-input").innerHTML,
+    //marketResult = document.querySelector(".marketResultValue .jet-form__calculated-field-input").innerHTML,
+    tax = document.querySelector("#tax").value,
+    marketTax = document.querySelector("#market_tax").value,
     economyValue = document.querySelector(".economyValue .jet-form__calculated-field-val").innerHTML,
     valueInput = document.querySelector("#applicationValue").value,
     segment = document.querySelector("#segment").value,
@@ -57,7 +60,7 @@ calcBtn.addEventListener('mousedown', () => {
       E-mail: ${email}, <br>
       WhatsApp: ${wpp}, <br> 
       Segmento: ${segment}, <br>
-      Valor que seria pago na Bruno Tavares Investimentos: R$${result}, <br>
+      Taxa ao ano: ${result}, <br>
       Valor que seria pago na média de mercado: R$${marketResult}, <br>
       Conosco você economiza: R$${economyValue}, <br>
     `
